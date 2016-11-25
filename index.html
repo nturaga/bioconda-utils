@@ -1,0 +1,287 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Bioconda &mdash; Bioconda  documentation</title>
+    
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <link rel="top" title="Bioconda  documentation" href="#" />
+    <link rel="next" title="Recipes" href="recipes.html" />
+<link rel="stylesheet" type="text/css" href="_static/font-awesome-4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="_static/style.css">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jqc-1.12.3/dt-1.10.12/datatables.min.css"/>
+<link href="https://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet">  
+<script type="text/javascript" src="https://cdn.datatables.net/v/dt/jqc-1.12.3/dt-1.10.12/datatables.min.js"></script>
+
+<script type="text/javascript" class="init">
+$(document).ready(function() {
+    $('#recipestable').DataTable( {
+        "lengthMenu": [[10, 25, 50, -1], [10, 25, 50, "All"]]
+    } );
+} );
+</script>
+
+  </head>
+  <body role="document">
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <img alt="_images/bioconda.png" src="_images/bioconda.png" />
+<div class="section" id="bioconda">
+<h1>Bioconda<a class="headerlink" href="#bioconda" title="Permalink to this headline">¶</a></h1>
+<p><strong>Bioconda</strong> is a channel for the <a class="reference external" href="http://conda.pydata.org/docs/intro.html">conda</a>  package manager specializing in
+bioinformatics software. Bioconda consists of:</p>
+<ul class="simple">
+<li>a <a class="reference external" href="https://github.com/bioconda/bioconda-recipes">repository of recipes</a> hosted on GitHub</li>
+<li>a <a class="reference external" href="https://github.com/bioconda/bioconda-utils">build system</a> that turns these recipes into conda packages</li>
+<li>a <a class="reference external" href="https://anaconda.org/bioconda/">repository of &gt;1500 bioinformatics packages</a> ready to use with <code class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span></code></li>
+<li>Over 130 contributors that add, modify, update and maintain the recipes</li>
+</ul>
+<p>The conda package manager has recently made installing software a vastly more
+streamlined process. Conda is a combination of other package managers you may
+have encountered, such as pip, CPAN, CRAN, Bioconductor, apt-get, and homebrew.
+Conda is both language- and OS-agnostic, and can be used to install C/C++,
+Fortran, Go, R, Python, Java etc programs on Linux, Mac OSX, and Windows.</p>
+<p>Conda allows separation of packages into separate repositories, or <cite>channels</cite>.
+The main <cite>defaults</cite> channel has a large number of common packages. Users can
+add additional channels from which to install software packages not available
+in the defaults channel. Bioconda is one such channel specializing in
+bioinformatics software.</p>
+</div>
+<div class="section" id="using-bioconda">
+<span id="id1"></span><h1>Using bioconda<a class="headerlink" href="#using-bioconda" title="Permalink to this headline">¶</a></h1>
+<p><strong>bioconda supports only 64-bit Linux and Mac OSX</strong>.</p>
+<div class="section" id="install-conda">
+<h2>1. Install conda<a class="headerlink" href="#install-conda" title="Permalink to this headline">¶</a></h2>
+<p>Bioconda requires the conda package manager to be installed. If you have an
+Anaconda Python installation, you already have it. Otherwise, the best way to
+install it is with the <a class="reference external" href="http://conda.pydata.org/miniconda.html">Miniconda</a>
+package. The Python 3 version is recommended.</p>
+<div class="admonition seealso">
+<p class="first admonition-title">See also</p>
+<ul class="last simple">
+<li><a class="reference internal" href="faqs.html#conda-anaconda-minconda"><span class="std std-ref">What&#8217;s the difference between Anaconda, conda, and Miniconda?</span></a></li>
+<li>The conda <a class="reference external" href="http://conda.pydata.org/docs/faq.html">FAQs</a> explain how
+it&#8217;s easy to use with existing Python installations.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="set-up-channels">
+<span id="id2"></span><h2>2. Set up channels<a class="headerlink" href="#set-up-channels" title="Permalink to this headline">¶</a></h2>
+<p>After installing conda you will need to add the bioconda channel as well as the
+other channels bioconda depends on. <strong>It is important to add them in this
+order</strong> so that the priority is set correctly (that is, bioconda is highest
+priority).</p>
+<p>The <cite>conda-forge</cite> channel contains many general-purpose packages not already
+found in the <cite>defaults</cite> channel. The <cite>r</cite> channel contains common R packages
+used as dependencies for bioconda packages.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">config</span> <span class="o">--</span><span class="n">add</span> <span class="n">channels</span> <span class="n">conda</span><span class="o">-</span><span class="n">forge</span>
+<span class="n">conda</span> <span class="n">config</span> <span class="o">--</span><span class="n">add</span> <span class="n">channels</span> <span class="n">defaults</span>
+<span class="n">conda</span> <span class="n">config</span> <span class="o">--</span><span class="n">add</span> <span class="n">channels</span> <span class="n">r</span>
+<span class="n">conda</span> <span class="n">config</span> <span class="o">--</span><span class="n">add</span> <span class="n">channels</span> <span class="n">bioconda</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="install-packages">
+<h2>3. Install packages<a class="headerlink" href="#install-packages" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="recipes.html#recipes"><span class="std std-ref">Browse the packages</span></a> to see what&#8217;s available.</p>
+<p>bioconda is now enabled, so any packages on the bioconda channel can be installed into the current conda environment:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="n">bwa</span>
+</pre></div>
+</div>
+<p>Or a new environment can be created:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">create</span> <span class="o">-</span><span class="n">n</span> <span class="n">aligners</span> <span class="n">bwa</span> <span class="n">bowtie</span> <span class="n">hisat</span> <span class="n">star</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="join-the-team">
+<h2>4. Join the team<a class="headerlink" href="#join-the-team" title="Permalink to this headline">¶</a></h2>
+<p>Because our time is limited, the policy is to add a package if we need it ourselves.
+However, we invite anybody who wants to use Conda for bioinformatics to
+<a class="reference external" href="https://github.com/bioconda/bioconda-recipes/issues/1">join the team</a> and
+contribute new packages. To get started, have a look at our
+<a class="reference external" href="https://github.com/bioconda/bioconda-recipes">recipes</a> and the
+<a class="reference external" href="http://conda.pydata.org/docs/building/recipe.html#conda-recipe-files-overview">Conda documentation</a>.
+If you don&#8217;t want to join us permanently, you can also fork the
+<a class="reference external" href="https://github.com/bioconda/bioconda-recipes">recipes</a> repository and create
+pull requests.</p>
+</div>
+<div class="section" id="spread-the-word">
+<h2>5. Spread the word<a class="headerlink" href="#spread-the-word" title="Permalink to this headline">¶</a></h2>
+<p>Consider <a class="reference external" href="_static/badge-generator/">adding a badge</a> to your posters and presentations to promote
+that a tool can be easily installed from bioconda.</p>
+</div>
+</div>
+<div class="section" id="contributors">
+<h1>Contributors<a class="headerlink" href="#contributors" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="core">
+<h2>Core<a class="headerlink" href="#core" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="https://github.com/johanneskoester">Johannes Köster</a></li>
+<li><a class="reference external" href="https://github.com/daler">Ryan Dale</a></li>
+<li><a class="reference external" href="https://github.com/chapmanb">Brad Chapman</a></li>
+<li><a class="reference external" href="https://github.com/tomkinsc">Chris Tomkins-Tinch</a></li>
+<li><a class="reference external" href="https://github.com/bgruening">Björn Grüning</a></li>
+</ul>
+</div>
+<div class="section" id="others">
+<h2>Others<a class="headerlink" href="#others" title="Permalink to this headline">¶</a></h2>
+<p>Bioconda has over 120 contributors, see <a class="reference external" href="https://github.com/bioconda/bioconda-recipes/graphs/contributors">here</a>.</p>
+<hr class="docutils" />
+<p>Bioconda is a derivative mark of Anaconda <sup>®</sup>, a trademark of Continuum Analytics, Inc registered in the U.S. and other countries.
+Continuum Analytics, Inc. grants permission of the derivative use but is not associated with Bioconda.</p>
+<p>The Bioconda channel is sponsored by <a class="reference external" href="https://www.continuum.io/">Continuum Analytics</a>.</p>
+</div>
+<div class="section" id="contributor-documentation">
+<h2>Contributor documentation<a class="headerlink" href="#contributor-documentation" title="Permalink to this headline">¶</a></h2>
+<p>The rest of this documentation describes the build system architecture, the
+process of creating and testing recipes, and adding recipes to the bioconda
+channel.</p>
+<p>Contents:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="recipes.html">Recipes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#one-time-setup">One-time setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#contributing-a-recipe">Contributing a recipe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contributing.html#use-your-new-recipe">Use your new recipe</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="faqs.html">FAQs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="faqs.html#what-s-the-difference-between-anaconda-conda-and-miniconda">What&#8217;s the difference between Anaconda, conda, and Miniconda?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faqs.html#recipe-vs-package">Recipe vs package</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faqs.html#continuous-integration-travis-ci">Continuous integration (Travis-CI)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faqs.html#how-is-travis-ci-set-up-and-configured">How is Travis-CI set up and configured?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faqs.html#what-does-subdag-mean-on-travis-ci">What does &#8220;SUBDAG&#8221; mean on Travis-CI?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faqs.html#how-are-environmental-variables-defined-and-used">How are environmental variables defined and used?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="faqs.html#what-s-the-lifecycle-of-a-bioconda-package">What&#8217;s the lifecycle of a bioconda package?</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting failed recipes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="troubleshooting.html#reading-bioconda-utils-logs-on-travis-ci">Reading bioconda-utils logs on Travis-CI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="troubleshooting.html#http-500-errors">HTTP 500 errors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="troubleshooting.html#http-404-errors">HTTP 404 errors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="troubleshooting.html#zlib-errors">ZLIB errors</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="build-system.html">Build system</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guidelines.html">Guidelines for <code class="docutils literal"><span class="pre">bioconda</span></code> recipes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="guidelines.html#bioconda-recipe-checklist">bioconda recipe checklist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guidelines.html#examples">Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guidelines.html#name-collisions">Name collisions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guidelines.html#tests">Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guidelines.html#link-and-unlink-scripts-pre-and-post-install-hooks">Link and unlink scripts (pre- and post- install hooks)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guidelines.html#versions">Versions</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></li>
+<li><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></li>
+<li><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></li>
+</ul>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="#">
+              <img class="logo" src="_static/bioconda_monochrome_small.png" alt="Logo"/>
+            </a></p>
+  <h3><a href="#">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Bioconda</a></li>
+<li><a class="reference internal" href="#using-bioconda">Using bioconda</a><ul>
+<li><a class="reference internal" href="#install-conda">1. Install conda</a></li>
+<li><a class="reference internal" href="#set-up-channels">2. Set up channels</a></li>
+<li><a class="reference internal" href="#install-packages">3. Install packages</a></li>
+<li><a class="reference internal" href="#join-the-team">4. Join the team</a></li>
+<li><a class="reference internal" href="#spread-the-word">5. Spread the word</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#contributors">Contributors</a><ul>
+<li><a class="reference internal" href="#core">Core</a></li>
+<li><a class="reference internal" href="#others">Others</a></li>
+<li><a class="reference internal" href="#contributor-documentation">Contributor documentation</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
+</ul>
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="#">Documentation overview</a><ul>
+      <li>Next: <a href="recipes.html" title="next chapter">Recipes</a></li>
+  </ul></li>
+</ul>
+</div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/index.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2016, The Bioconda Team.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
+      
+      |
+      <a href="_sources/index.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
