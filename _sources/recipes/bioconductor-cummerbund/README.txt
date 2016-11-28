@@ -11,7 +11,7 @@ Allows for persistent storage, access, exploration, and manipulation of Cufflink
 Home     http://bioconductor.org/packages/release/bioc/html/cummeRbund.html
 Versions 2.12.1, 2.8.2
 License  Artistic-2.0
-Recipe   https://github.com/bioconda/bioconda-recipes/tree/master/recipes/bioconductor-cummerbund/2.8.2
+Recipe   https://github.com/bioconda/bioconda-recipes/tree/master/recipes/bioconductor-cummerbund/2.12.1
 ======== ===========
 
 Installation

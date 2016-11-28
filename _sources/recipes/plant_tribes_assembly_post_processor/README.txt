@@ -11,7 +11,7 @@ Transcriptome assembly post processing pipeline
 Home     https://github.com/dePamphilis/PlantTribes
 Versions 0.1, 0.2
 License  GNU General Public License v3 (GPLv3)
-Recipe   https://github.com/bioconda/bioconda-recipes/tree/master/recipes/plant_tribes_assembly_post_processor/0.1
+Recipe   https://github.com/bioconda/bioconda-recipes/tree/master/recipes/plant_tribes_assembly_post_processor/0.2
 ======== ===========
 
 Installation

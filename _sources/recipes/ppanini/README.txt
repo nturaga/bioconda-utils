@@ -8,8 +8,8 @@ ppanini
 PPANINI: Prioritization and Prediction of functional Annotations for Novel and Important genes via automated data Network Integration.
 
 ======== ===========
-Home     https://bitbucket.org/biobakery/ppanini
-Versions 0.6.2
+Home     http://huttenhower.sph.harvard.edu/ppanini
+Versions 0.6.2, 0.6.4
 License  MIT
 Recipe   https://github.com/bioconda/bioconda-recipes/tree/master/recipes/ppanini
 ======== ===========
