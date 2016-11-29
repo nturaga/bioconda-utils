@@ -9336,7 +9336,7 @@ Recipes
         
         <td><i class="fa fa-linux"></i></td>
         
-        <td></td>
+        <td><i class="fa fa-apple"></i></td>
         
     </tr>
     
@@ -12557,20 +12557,6 @@ Recipes
         <td><i class="fa fa-linux"></i></td>
         
         <td><i class="fa fa-apple"></i></td>
-        
-    </tr>
-    
-    <tr>
-        
-        <td><a href="recipes/dscr/README.html">dscr</a></td>
-        
-        <td>2014.12.17</td>
-        
-        <td></td>
-        
-        <td><i class="fa fa-linux"></i></td>
-        
-        <td></td>
         
     </tr>
     
@@ -19355,6 +19341,20 @@ Recipes
         <td><a href="recipes/cutadapt/README.html">cutadapt</a></td>
         
         <td>1.11</td>
+        
+        <td></td>
+        
+        <td><i class="fa fa-linux"></i></td>
+        
+        <td><i class="fa fa-apple"></i></td>
+        
+    </tr>
+    
+    <tr>
+        
+        <td><a href="recipes/cutadapt/README.html">cutadapt</a></td>
+        
+        <td>1.12</td>
         
         <td></td>
         
