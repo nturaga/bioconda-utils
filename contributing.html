@@ -26,7 +26,7 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="top" title="Bioconda  documentation" href="index.html" />
-    <link rel="next" title="FAQs" href="faqs.html" />
+    <link rel="next" title="One-time setup" href="contrib-setup.html" />
     <link rel="prev" title="zifa" href="recipes/zifa/README.html" />
 <link rel="stylesheet" type="text/css" href="_static/font-awesome-4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="_static/style.css">
@@ -56,175 +56,39 @@ $(document).ready(function() {
 <p>Bioconda is completely dependent on contributors to add, update, and maintain
 recipes. Every little bit helps! Below are instructions for one-time setup as
 well as a general procedure to follow for each recipe you&#8217;d like to add.</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last"><cite>conda-build</cite>, which is required for building conda packages, must be
-installed in the root environment, and the root environment must be Python
-3. The dependencies for the build system also need to be installed in the
-root environment.</p>
-</div>
-<div class="section" id="one-time-setup">
-<h2>One-time setup<a class="headerlink" href="#one-time-setup" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="git-and-github-one-time-setup">
-<span id="github-setup"></span><h3>Git and GitHub (one-time setup)<a class="headerlink" href="#git-and-github-one-time-setup" title="Permalink to this headline">¶</a></h3>
+<div class="toctree-wrapper compound">
 <ul>
-<li><p class="first">Create a <a class="reference external" href="https://help.github.com/articles/fork-a-repo/">fork</a> of
-<a class="reference external" href="https://github.com/bioconda/bioconda-recipes">bioconda-recipes on GitHub</a>
-and clone it locally. Even if you are a member of the bioconda team with push
-access, using your own fork will allow testing of your recipes on travis-ci
-using your own account&#8217;s free resources without consuming resources allocated
-by travis-ci to the <cite>bioconda</cite> group. This makes the tests go faster for
-everyone:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/&lt;</span><span class="n">USERNAME</span><span class="o">&gt;/</span><span class="n">bioconda</span><span class="o">-</span><span class="n">recipes</span><span class="o">.</span><span class="n">git</span>
-</pre></div>
-</div>
+<li class="toctree-l1"><a class="reference internal" href="contrib-setup.html">One-time setup</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="contrib-setup.html#git-and-github-one-time-setup">Git and GitHub (one-time setup)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contrib-setup.html#install-conda-and-docker-one-time-setup">Install conda and Docker (one-time setup)</a></li>
+</ul>
 </li>
-<li><p class="first">Connect the fork to travis-ci, following steps 1 and 2 from the <a class="reference external" href="https://docs.travis-ci.com/user/getting-started/#To-get-started-with-Travis-CI%3A">travis-ci
-docs</a></p>
+<li class="toctree-l1"><a class="reference internal" href="contribute-a-recipe.html">Contributing a recipe</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="contribute-a-recipe.html#update-repo-and-requirements">Update repo and requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contribute-a-recipe.html#write-a-recipe">Write a recipe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contribute-a-recipe.html#test-locally">Test locally</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contribute-a-recipe.html#push-changes-wait-for-tests-to-pass-submit-pull-request">Push changes, wait for tests to pass, submit pull request</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contribute-a-recipe.html#use-your-new-recipe">Use your new recipe</a></li>
+</ul>
 </li>
-<li><p class="first">Add the main bioconda-recipes repo as an upstream remote to more easily
-update your branch with the upstream master branch:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">remote</span> <span class="n">add</span> <span class="n">upstream</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">bioconda</span><span class="o">/</span><span class="n">bioconda</span><span class="o">-</span><span class="n">recipes</span><span class="o">.</span><span class="n">git</span>
-</pre></div>
-</div>
+<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting failed recipes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="troubleshooting.html#reading-bioconda-utils-logs-on-travis-ci">Reading bioconda-utils logs on Travis-CI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="troubleshooting.html#http-500-errors">HTTP 500 errors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="troubleshooting.html#http-404-errors">HTTP 404 errors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="troubleshooting.html#zlib-errors">ZLIB errors</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="build-system.html">Build system</a></li>
+<li class="toctree-l1"><a class="reference internal" href="guidelines.html">Guidelines for <code class="docutils literal"><span class="pre">bioconda</span></code> recipes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="guidelines.html#bioconda-recipe-checklist">bioconda recipe checklist</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guidelines.html#examples">Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guidelines.html#name-collisions">Name collisions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guidelines.html#tests">Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guidelines.html#link-and-unlink-scripts-pre-and-post-install-hooks">Link and unlink scripts (pre- and post- install hooks)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guidelines.html#versions">Versions</a></li>
+</ul>
 </li>
 </ul>
-</div>
-<div class="section" id="install-conda-and-docker-one-time-setup">
-<h3>Install conda and Docker (one-time setup)<a class="headerlink" href="#install-conda-and-docker-one-time-setup" title="Permalink to this headline">¶</a></h3>
-<ol class="arabic simple">
-<li>Install <a class="reference external" href="http://conda.pydata.org/miniconda.html">conda</a>. The Python
-3 version is required.</li>
-<li>Install <a class="reference external" href="https://www.docker.com/">Docker</a>. (optional, but allows you to
-simulate most closely the Travis-CI tests).</li>
-</ol>
-</div>
-</div>
-<div class="section" id="contributing-a-recipe">
-<h2>Contributing a recipe<a class="headerlink" href="#contributing-a-recipe" title="Permalink to this headline">¶</a></h2>
-<p>The following steps are done for each recipe or batch of recipes you&#8217;d like to
-contribute.</p>
-<div class="section" id="update-repo-and-requirements">
-<h3>Update repo and requirements<a class="headerlink" href="#update-repo-and-requirements" title="Permalink to this headline">¶</a></h3>
-<ol class="arabic simple">
-<li>Before starting, it&#8217;s best to update your fork with any changes made
-recently to the upstream bioconda repo. Assuming you&#8217;ve set up your fork as
-above:</li>
-</ol>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>git checkout master
-git pull upstream master
-</pre></div>
-</div>
-<ol class="arabic simple" start="2">
-<li>Set up the channel order and install the versions of dependencies
-currently used in the master branch. The channel order should generally stay
-the same and the dependencies are not likely to change much, but this
-ensures that the local environment most closely resembles the build
-environment on travis-ci:</li>
-</ol>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>./simulate-travis.py --set-channel-order
-./simulate-travis.py --install-requirements
-</pre></div>
-</div>
-</div>
-<div class="section" id="write-a-recipe">
-<h3>Write a recipe<a class="headerlink" href="#write-a-recipe" title="Permalink to this headline">¶</a></h3>
-<p>Check out a new branch in your fork (here the branch is arbitrarily named &#8220;my-recipe&#8221;):</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>git checkout -b my-recipe
-</pre></div>
-</div>
-<p>and write one or more recipes.</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p>The <a class="reference external" href="http://conda.pydata.org/docs/building/recipe.html">conda-build docs</a>
-are the authoritative source for information on building a recipe.</p>
-<p class="last">Please familiarize yourself with the <a class="reference internal" href="guidelines.html#guidelines"><span class="std std-ref">Guidelines for bioconda recipes</span></a> for details on
-bioconda-specific policies.</p>
-</div>
-</div>
-<div class="section" id="test-locally">
-<h3>Test locally<a class="headerlink" href="#test-locally" title="Permalink to this headline">¶</a></h3>
-<p>To make sure your recipe works, there are several options. The quickest, but
-not necessarily most complete, is to run conda-build directly:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">build</span> <span class="o">&lt;</span><span class="n">recipe</span><span class="o">-</span><span class="nb">dir</span><span class="o">&gt;</span>
-</pre></div>
-</div>
-<p>To test the recipe in a way more representative of the travis-ci environment,
-use the <cite>simulate-travis.py</cite> script in the top-level directory of the repo.
-<cite>simulate-travis.py</cite> reads the config files in the repo and sets things up as
-closely as possible to how the builds will be run on travis-ci. It should be
-run from the top-level dir of the repo. Any arguments are passed on to the
-<cite>bioconda-utils build</cite> command, so check <cite>bioconda-utils build -h</cite> for help and
-more options.</p>
-<p>Some example commands:</p>
-<p>This tests everything, using the installed conda-build. It will check all
-recipes to see what needs to be built and so it is the most comprehensive:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">simulate</span><span class="o">-</span><span class="n">travis</span><span class="o">.</span><span class="n">py</span>
-</pre></div>
-</div>
-<p>Same thing but using <cite>&#8211;docker</cite>. If you&#8217;re on OSX and have docker installed,
-you can use this to test the recipe under Linux:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">simulate</span><span class="o">-</span><span class="n">travis</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">docker</span>
-</pre></div>
-</div>
-<p>Use the <cite>&#8211;quick</cite> option which will just check recipes that have changed since
-the last commit to master branch or that have been newly removed from any
-configured blacklists. This can help speed up the recipe filter stage which can
-take 5 mins to thoroughly check 1500+ recipes. Note that this will not find
-cases where a pinned version (e.g., <cite>{ CONDA_BOOST }</cite>) has been changed:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">simulate</span><span class="o">-</span><span class="n">travis</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">docker</span> <span class="o">--</span><span class="n">quick</span>
-</pre></div>
-</div>
-<p>To specify exactly which packages you want to try building, use the
-<cite>&#8211;packages</cite> argument. Note that the arguments to <cite>&#8211;packages</cite> can be globs and
-are of package <em>names</em> rather than <em>paths</em> to recipe directories. For example,
-to consider all R and Bioconductor packages:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="o">./</span><span class="n">simulate</span><span class="o">-</span><span class="n">travis</span><span class="o">.</span><span class="n">py</span> <span class="o">--</span><span class="n">docker</span> <span class="o">--</span><span class="n">package</span> <span class="n">r</span><span class="o">-*</span> <span class="n">bioconductor</span><span class="o">-*</span>
-</pre></div>
-</div>
-<div class="admonition seealso">
-<p class="first admonition-title">See also</p>
-<p class="last">See <a class="reference internal" href="troubleshooting.html#reading-logs"><span class="std std-ref">Reading bioconda-utils logs on Travis-CI</span></a> for tips on finding the information you need from
-log files.</p>
-</div>
-</div>
-<div class="section" id="push-changes-wait-for-tests-to-pass-submit-pull-request">
-<h3>Push changes, wait for tests to pass, submit pull request<a class="headerlink" href="#push-changes-wait-for-tests-to-pass-submit-pull-request" title="Permalink to this headline">¶</a></h3>
-<p>Before pushing your changes to your fork on github, it&#8217;s best to merge any
-changes that have happened recently on the upstream master branch. See
-<a class="reference external" href="https://help.github.com/articles/syncing-a-fork/">sycncing a fork</a> for
-details, or:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>git fetch upstream
-
-<span class="c1"># syncs the fork&#39;s master branch with upstream</span>
-git checkout master
-git merge upstream/master
-
-<span class="c1"># merges those changes into the recipe&#39;s branch</span>
-git checkout my-recipe
-git merge master
-</pre></div>
-</div>
-<p>Push your changes to your fork on github:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">push</span> <span class="n">origin</span> <span class="n">my</span><span class="o">-</span><span class="n">recipe</span>
-</pre></div>
-</div>
-<p>and watch the Travis-CI logs by going to travis-ci.org and finding your fork of
-bioconda-recipes. Keep making changes on your fork and pushing them until the
-travis-ci builds pass.</p>
-<p>Open a <a class="reference external" href="https://help.github.com/articles/about-pull-requests/">pull request</a>
-on the bioconda-recipes repo. If it&#8217;s your first recipe or the recipe is doing
-something non-standard, please ask <cite>&#64;bioconda/core</cite> for a review.</p>
-</div>
-</div>
-<div class="section" id="use-your-new-recipe">
-<h2>Use your new recipe<a class="headerlink" href="#use-your-new-recipe" title="Permalink to this headline">¶</a></h2>
-<p>When the PR is merged with the master branch, travis-ci will again do the
-builds but at the end will upload the packages to anaconda.org. Once the merge
-build completes, your new package is installable by anyone using:</p>
-<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">conda</span> <span class="n">install</span> <span class="n">my</span><span class="o">-</span><span class="n">package</span><span class="o">-</span><span class="n">name</span> <span class="o">-</span><span class="n">c</span> <span class="n">bioconda</span>
-</pre></div>
-</div>
 </div>
 </div>
 
@@ -234,54 +98,35 @@ build completes, your new package is installable by anyone using:</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-            <p class="logo"><a href="index.html">
-              <img class="logo" src="_static/bioconda_monochrome_small.png" alt="Logo"/>
-            </a></p>
-  <h3><a href="index.html">Table Of Contents</a></h3>
-  <ul>
-<li><a class="reference internal" href="#">Contributing</a><ul>
-<li><a class="reference internal" href="#one-time-setup">One-time setup</a><ul>
-<li><a class="reference internal" href="#git-and-github-one-time-setup">Git and GitHub (one-time setup)</a></li>
-<li><a class="reference internal" href="#install-conda-and-docker-one-time-setup">Install conda and Docker (one-time setup)</a></li>
+<p class="logo">
+  <a href="index.html">
+    <img class="logo" src="_static/logo/bioconda_monochrome_small.png" alt="Logo"/>
+    
+  </a>
+</p>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="recipes.html">Available packages</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Contributing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="contrib-setup.html">One-time setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contribute-a-recipe.html">Contributing a recipe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="troubleshooting.html">Troubleshooting failed recipes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build-system.html">Build system</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guidelines.html">Guidelines for <code class="docutils literal"><span class="pre">bioconda</span></code> recipes</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#contributing-a-recipe">Contributing a recipe</a><ul>
-<li><a class="reference internal" href="#update-repo-and-requirements">Update repo and requirements</a></li>
-<li><a class="reference internal" href="#write-a-recipe">Write a recipe</a></li>
-<li><a class="reference internal" href="#test-locally">Test locally</a></li>
-<li><a class="reference internal" href="#push-changes-wait-for-tests-to-pass-submit-pull-request">Push changes, wait for tests to pass, submit pull request</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faqs.html">FAQs</a></li>
 </ul>
-</li>
-<li><a class="reference internal" href="#use-your-new-recipe">Use your new recipe</a></li>
-</ul>
-</li>
-</ul>
-<div class="relations">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="recipes/zifa/README.html" title="previous chapter">zifa</a></li>
-      <li>Next: <a href="faqs.html" title="next chapter">FAQs</a></li>
-  </ul></li>
-</ul>
-</div>
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="_sources/contributing.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
-<div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
         </div>
       </div>
       <div class="clearer"></div>

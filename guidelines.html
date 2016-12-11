@@ -26,6 +26,8 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="top" title="Bioconda  documentation" href="index.html" />
+    <link rel="up" title="Contributing" href="contributing.html" />
+    <link rel="next" title="FAQs" href="faqs.html" />
     <link rel="prev" title="Build system" href="build-system.html" />
 <link rel="stylesheet" type="text/css" href="_static/font-awesome-4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="_static/style.css">
@@ -402,65 +404,43 @@ and others.</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-            <p class="logo"><a href="index.html">
-              <img class="logo" src="_static/bioconda_monochrome_small.png" alt="Logo"/>
-            </a></p>
-  <h3><a href="index.html">Table Of Contents</a></h3>
-  <ul>
-<li><a class="reference internal" href="#">Guidelines for <code class="docutils literal"><span class="pre">bioconda</span></code> recipes</a><ul>
-<li><a class="reference internal" href="#bioconda-recipe-checklist">bioconda recipe checklist</a><ul>
-<li><a class="reference internal" href="#stable-urls">Stable urls</a></li>
-<li><a class="reference internal" href="#bat-files"><code class="docutils literal"><span class="pre">.bat</span></code> files</a></li>
-<li><a class="reference internal" href="#comments-in-recipes">Comments in recipes</a></li>
-<li><a class="reference internal" href="#filesystem-hierarchy-standard">Filesystem Hierarchy Standard</a></li>
-<li><a class="reference internal" href="#existing-package-exceptions">Existing package exceptions</a></li>
-<li><a class="reference internal" href="#packages-appropriate-for-bioconda">Packages appropriate for bioconda</a></li>
+<p class="logo">
+  <a href="index.html">
+    <img class="logo" src="_static/logo/bioconda_monochrome_small.png" alt="Logo"/>
+    
+  </a>
+</p>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="recipes.html">Available packages</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="contributing.html">Contributing</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="contrib-setup.html">One-time setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contribute-a-recipe.html">Contributing a recipe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="troubleshooting.html">Troubleshooting failed recipes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="build-system.html">Build system</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Guidelines for <code class="docutils literal"><span class="pre">bioconda</span></code> recipes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#bioconda-recipe-checklist">bioconda recipe checklist</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#examples">Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#name-collisions">Name collisions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tests">Tests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#link-and-unlink-scripts-pre-and-post-install-hooks">Link and unlink scripts (pre- and post- install hooks)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#versions">Versions</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#examples">Examples</a><ul>
-<li><a class="reference internal" href="#python">Python</a></li>
-<li><a class="reference internal" href="#r-cran">R (CRAN)</a></li>
-<li><a class="reference internal" href="#r-bioconductor">R (Bioconductor)</a></li>
-<li><a class="reference internal" href="#java">Java</a></li>
-<li><a class="reference internal" href="#perl">Perl</a></li>
-<li><a class="reference internal" href="#c-c">C/C++</a></li>
-<li><a class="reference internal" href="#general-command-line-tools">General command-line tools</a></li>
-<li><a class="reference internal" href="#metapackages">Metapackages</a></li>
-<li><a class="reference internal" href="#other-examples-of-interest">Other examples of interest</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#name-collisions">Name collisions</a></li>
-<li><a class="reference internal" href="#tests">Tests</a></li>
-<li><a class="reference internal" href="#link-and-unlink-scripts-pre-and-post-install-hooks">Link and unlink scripts (pre- and post- install hooks)</a></li>
-<li><a class="reference internal" href="#versions">Versions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faqs.html">FAQs</a></li>
 </ul>
-</li>
-</ul>
-<div class="relations">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="index.html">Documentation overview</a><ul>
-      <li>Previous: <a href="build-system.html" title="previous chapter">Build system</a></li>
-  </ul></li>
-</ul>
-</div>
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="_sources/guidelines.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
-<div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
         </div>
       </div>
       <div class="clearer"></div>

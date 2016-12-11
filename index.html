@@ -6,7 +6,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Bioconda &mdash; Bioconda  documentation</title>
+    <title>Using bioconda &mdash; Bioconda  documentation</title>
     
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -26,7 +26,7 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <link rel="top" title="Bioconda  documentation" href="#" />
-    <link rel="next" title="Recipes" href="recipes.html" />
+    <link rel="next" title="Available packages" href="recipes.html" />
 <link rel="stylesheet" type="text/css" href="_static/font-awesome-4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css" href="_static/style.css">
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jqc-1.12.3/dt-1.10.12/datatables.min.css"/>
@@ -51,8 +51,6 @@ $(document).ready(function() {
           <div class="body" role="main">
             
   <img alt="_images/bioconda.png" src="_images/bioconda.png" />
-<div class="section" id="bioconda">
-<h1>Bioconda<a class="headerlink" href="#bioconda" title="Permalink to this headline">¶</a></h1>
 <p><strong>Bioconda</strong> is a channel for the <a class="reference external" href="http://conda.pydata.org/docs/intro.html">conda</a>  package manager specializing in
 bioinformatics software. Bioconda consists of:</p>
 <ul class="simple">
@@ -61,6 +59,7 @@ bioinformatics software. Bioconda consists of:</p>
 <li>a <a class="reference external" href="https://anaconda.org/bioconda/">repository of &gt;1500 bioinformatics packages</a> ready to use with <code class="docutils literal"><span class="pre">conda</span> <span class="pre">install</span></code></li>
 <li>Over 130 contributors that add, modify, update and maintain the recipes</li>
 </ul>
+<p><strong>Browse packages in the bioconda channel:</strong> <a class="reference internal" href="recipes.html#recipes"><span class="std std-ref">Available packages</span></a></p>
 <p>The conda package manager has recently made installing software a vastly more
 streamlined process. Conda is a combination of other package managers you may
 have encountered, such as pip, CPAN, CRAN, Bioconductor, apt-get, and homebrew.
@@ -71,7 +70,6 @@ The main <cite>defaults</cite> channel has a large number of common packages. Us
 add additional channels from which to install software packages not available
 in the defaults channel. Bioconda is one such channel specializing in
 bioinformatics software.</p>
-</div>
 <div class="section" id="using-bioconda">
 <span id="id1"></span><h1>Using bioconda<a class="headerlink" href="#using-bioconda" title="Permalink to this headline">¶</a></h1>
 <p><strong>bioconda supports only 64-bit Linux and Mac OSX</strong>.</p>
@@ -164,11 +162,38 @@ channel.</p>
 <p>Contents:</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="recipes.html">Recipes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="recipes.html">Available packages</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="contributing.html#one-time-setup">One-time setup</a></li>
-<li class="toctree-l2"><a class="reference internal" href="contributing.html#contributing-a-recipe">Contributing a recipe</a></li>
-<li class="toctree-l2"><a class="reference internal" href="contributing.html#use-your-new-recipe">Use your new recipe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="contrib-setup.html">One-time setup</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="contrib-setup.html#git-and-github-one-time-setup">Git and GitHub (one-time setup)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="contrib-setup.html#install-conda-and-docker-one-time-setup">Install conda and Docker (one-time setup)</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="contribute-a-recipe.html">Contributing a recipe</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="contribute-a-recipe.html#update-repo-and-requirements">Update repo and requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="contribute-a-recipe.html#write-a-recipe">Write a recipe</a></li>
+<li class="toctree-l3"><a class="reference internal" href="contribute-a-recipe.html#test-locally">Test locally</a></li>
+<li class="toctree-l3"><a class="reference internal" href="contribute-a-recipe.html#push-changes-wait-for-tests-to-pass-submit-pull-request">Push changes, wait for tests to pass, submit pull request</a></li>
+<li class="toctree-l3"><a class="reference internal" href="contribute-a-recipe.html#use-your-new-recipe">Use your new recipe</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="troubleshooting.html">Troubleshooting failed recipes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="troubleshooting.html#reading-bioconda-utils-logs-on-travis-ci">Reading bioconda-utils logs on Travis-CI</a></li>
+<li class="toctree-l3"><a class="reference internal" href="troubleshooting.html#http-500-errors">HTTP 500 errors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="troubleshooting.html#http-404-errors">HTTP 404 errors</a></li>
+<li class="toctree-l3"><a class="reference internal" href="troubleshooting.html#zlib-errors">ZLIB errors</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="build-system.html">Build system</a></li>
+<li class="toctree-l2"><a class="reference internal" href="guidelines.html">Guidelines for <code class="docutils literal"><span class="pre">bioconda</span></code> recipes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="guidelines.html#bioconda-recipe-checklist">bioconda recipe checklist</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guidelines.html#examples">Examples</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guidelines.html#name-collisions">Name collisions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guidelines.html#tests">Tests</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guidelines.html#link-and-unlink-scripts-pre-and-post-install-hooks">Link and unlink scripts (pre- and post- install hooks)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="guidelines.html#versions">Versions</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="faqs.html">FAQs</a><ul>
@@ -181,34 +206,9 @@ channel.</p>
 <li class="toctree-l2"><a class="reference internal" href="faqs.html#what-s-the-lifecycle-of-a-bioconda-package">What&#8217;s the lifecycle of a bioconda package?</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting failed recipes</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="troubleshooting.html#reading-bioconda-utils-logs-on-travis-ci">Reading bioconda-utils logs on Travis-CI</a></li>
-<li class="toctree-l2"><a class="reference internal" href="troubleshooting.html#http-500-errors">HTTP 500 errors</a></li>
-<li class="toctree-l2"><a class="reference internal" href="troubleshooting.html#http-404-errors">HTTP 404 errors</a></li>
-<li class="toctree-l2"><a class="reference internal" href="troubleshooting.html#zlib-errors">ZLIB errors</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="build-system.html">Build system</a></li>
-<li class="toctree-l1"><a class="reference internal" href="guidelines.html">Guidelines for <code class="docutils literal"><span class="pre">bioconda</span></code> recipes</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="guidelines.html#bioconda-recipe-checklist">bioconda recipe checklist</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guidelines.html#examples">Examples</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guidelines.html#name-collisions">Name collisions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guidelines.html#tests">Tests</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guidelines.html#link-and-unlink-scripts-pre-and-post-install-hooks">Link and unlink scripts (pre- and post- install hooks)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="guidelines.html#versions">Versions</a></li>
-</ul>
-</li>
 </ul>
 </div>
 </div>
-</div>
-<div class="section" id="indices-and-tables">
-<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
-<ul class="simple">
-<li><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></li>
-<li><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></li>
-<li><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></li>
-</ul>
 </div>
 
 
@@ -217,53 +217,28 @@ channel.</p>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-            <p class="logo"><a href="#">
-              <img class="logo" src="_static/bioconda_monochrome_small.png" alt="Logo"/>
-            </a></p>
-  <h3><a href="#">Table Of Contents</a></h3>
-  <ul>
-<li><a class="reference internal" href="#">Bioconda</a></li>
-<li><a class="reference internal" href="#using-bioconda">Using bioconda</a><ul>
-<li><a class="reference internal" href="#install-conda">1. Install conda</a></li>
-<li><a class="reference internal" href="#set-up-channels">2. Set up channels</a></li>
-<li><a class="reference internal" href="#install-packages">3. Install packages</a></li>
-<li><a class="reference internal" href="#join-the-team">4. Join the team</a></li>
-<li><a class="reference internal" href="#spread-the-word">5. Spread the word</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#contributors">Contributors</a><ul>
-<li><a class="reference internal" href="#core">Core</a></li>
-<li><a class="reference internal" href="#others">Others</a></li>
-<li><a class="reference internal" href="#contributor-documentation">Contributor documentation</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
-</ul>
-<div class="relations">
-<h3>Related Topics</h3>
+<p class="logo">
+  <a href="#">
+    <img class="logo" src="_static/logo/bioconda_monochrome_small.png" alt="Logo"/>
+    
+  </a>
+</p>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
 <ul>
-  <li><a href="#">Documentation overview</a><ul>
-      <li>Next: <a href="recipes.html" title="next chapter">Recipes</a></li>
-  </ul></li>
+<li class="toctree-l1"><a class="reference internal" href="recipes.html">Available packages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faqs.html">FAQs</a></li>
 </ul>
-</div>
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="_sources/index.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
-<div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
-      <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
-    </form>
-</div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+
+
         </div>
       </div>
       <div class="clearer"></div>
