@@ -8,9 +8,9 @@ mmtf-python
 A decoding libary for the PDB mmtf format
 
 ======== ===========
-Home     https://github.com/rcsb/mmtf-python.git
-Versions 1.0.2
-License  MIT License
+Home     http://mmtf.rcsb.org
+Versions 1.0.2, 1.0.5
+License  Apache-2.0
 Recipe   https://github.com/bioconda/bioconda-recipes/tree/master/recipes/mmtf-python
 ======== ===========
 

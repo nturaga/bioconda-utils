@@ -11,7 +11,7 @@ Accelerated BLAST compatible local sequence aligner
 Home     http://ab.inf.uni-tuebingen.de/software/diamond/
 Versions 0.7.10, 0.8.22, 0.8.24, 0.8.9
 License  BSD
-Recipe   https://github.com/bioconda/bioconda-recipes/tree/master/recipes/diamond/0.8.22
+Recipe   https://github.com/bioconda/bioconda-recipes/tree/master/recipes/diamond/0.8.24
 ======== ===========
 
 Installation

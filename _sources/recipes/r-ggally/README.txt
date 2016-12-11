@@ -5,11 +5,11 @@ r-ggally
 
 |downloads|
 
-GGally is designed to be a helper to ggplot2. It contains templates for different plots to be combined into a plot matrix, a parallel coordinate plot function, as well as a function for making a network plot.
+ The R package 'ggplot2' is a plotting system based on the grammar of graphics. 'GGally' extends 'ggplot2' by adding several functions to reduce the complexity of combining geometric objects with transformed data. Some of these functions include a pairwise plot matrix, a two group pairwise plot matrix, a parallel coordinates plot, a survival plot, and several functions to plot networks.
 
 ======== ===========
-Home     
-Versions 0.5.0
+Home     https://ggobi.github.io/ggally, https://github.com/ggobi/ggally
+Versions 0.5.0, 1.3.0
 License  GPL (>= 2.0)
 Recipe   https://github.com/bioconda/bioconda-recipes/tree/master/recipes/r-ggally
 ======== ===========

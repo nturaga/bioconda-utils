@@ -9,7 +9,7 @@ Pytest plugin for measuring coverage.
 
 ======== ===========
 Home     https://github.com/pytest-dev/pytest-cov
-Versions 2.2.0
+Versions 2.2.0, 2.4.0
 License  BSD License
 Recipe   https://github.com/bioconda/bioconda-recipes/tree/master/recipes/pytest-cov
 ======== ===========

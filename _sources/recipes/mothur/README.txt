@@ -9,7 +9,7 @@ mothur
 
 ======== ===========
 Home     http://www.mothur.org
-Versions 1.25.0, 1.36.1
+Versions 1.25.0, 1.36.1, 1.38.1.1
 License  GPL
 Recipe   https://github.com/bioconda/bioconda-recipes/tree/master/recipes/mothur
 ======== ===========

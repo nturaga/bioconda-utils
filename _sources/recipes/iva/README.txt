@@ -9,7 +9,7 @@ Iterative Virus Assembler
 
 ======== ===========
 Home     https://github.com/sanger-pathogens/iva
-Versions 1.0.6
+Versions 1.0.6, 1.0.7
 License  GNU General Public License v3 (GPLv3)
 Recipe   https://github.com/bioconda/bioconda-recipes/tree/master/recipes/iva
 ======== ===========

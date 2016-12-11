@@ -10,7 +10,7 @@ Binary Search Tree library
 ======== ===========
 Home     https://sourceforge.net/projects/estscan/files/BTLib
 Versions 0.19
-License  perl_5
+License  open source
 Recipe   https://github.com/bioconda/bioconda-recipes/tree/master/recipes/perl-btlib/0.19
 ======== ===========
 

@@ -5,7 +5,7 @@ gawk
 
 |downloads|
 
-GNU awk
+The awk utility interprets a special-purpose programming language that makes it possible to handle simple data-reformatting jobs with just a few lines of code.
 
 ======== ===========
 Home     https://www.gnu.org/software/gawk/

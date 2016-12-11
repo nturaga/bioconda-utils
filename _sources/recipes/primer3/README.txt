@@ -9,7 +9,7 @@ Design PCR primers from DNA sequence. From mispriming libraries to sequence qual
 
 ======== ===========
 Home     http://primer3.sourceforge.net/
-Versions 2.3.7
+Versions 1.1.4, 2.3.7
 License  GPLv2
 Recipe   https://github.com/bioconda/bioconda-recipes/tree/master/recipes/primer3
 ======== ===========
