@@ -22,7 +22,7 @@ logging.getLogger("requests").setLevel(logging.WARNING)
 
 logger = utils.setup_logger(__name__)
 
-base_url = 'http://bioconductor.org/packages/'
+base_url = 'https://bioconductor.org/packages/'
 
 # Packages that might be specified in the DESCRIPTION of a package as
 # dependencies, but since they're built-in we don't need to specify them in
@@ -47,12 +47,15 @@ class PageNotFoundError(Exception):
     pass
 
 
+## FIXME: Change where versions come from, http://bioconductor.org/config.yaml
 def bioconductor_versions():
     """
     Returns a list of available Bioconductor versions scraped from the
     Bioconductor site.
     """
     regex = re.compile('^/packages/(?P<version>\d+\.\d+)/$')
+    ## FIXME
+    url = "https://bioconductor.org/config.yaml"
     url = 'https://www.bioconductor.org/about/release-announcements/#release-versions'
     response = requests.get(url)
     soup = bs4.BeautifulSoup(response.content, 'html.parser')
@@ -65,7 +68,7 @@ def bioconductor_versions():
     versions = sorted(versions, key=float, reverse=True)
     return versions
 
-
+## FIXME: Latest release version
 def latest_bioconductor_version():
     """
     Latest Bioconductor version scraped from the Bioconductor site.
@@ -89,7 +92,7 @@ def bioconductor_tarball_url(package, pkg_version, bioc_version):
         Bioconductor release version
     """
     return (
-        'http://bioconductor.org/packages/{bioc_version}'
+        'https://bioconductor.org/packages/{bioc_version}'
         '/bioc/src/contrib/{package}_{pkg_version}.tar.gz'.format(**locals())
     )
 
@@ -110,7 +113,7 @@ def bioconductor_annotation_data_url(package, pkg_version, bioc_version):
         Bioconductor release version
     """
     return (
-        'http://bioconductor.org/packages/{bioc_version}'
+        'https://bioconductor.org/packages/{bioc_version}'
         '/data/annotation/src/contrib/{package}_{pkg_version}.tar.gz'.format(**locals())
     )
 
@@ -131,11 +134,12 @@ def bioconductor_experiment_data_url(package, pkg_version, bioc_version):
         Bioconductor release version
     """
     return (
-        'http://bioconductor.org/packages/{bioc_version}'
+        'https://bioconductor.org/packages/{bioc_version}'
         '/data/experiment/src/contrib/{package}_{pkg_version}.tar.gz'.format(**locals())
     )
 
 
+## FIXME: http://bioconductor.org/packages/3.7/bioc/src/contrib/Archive/
 def bioarchive_url(package, pkg_version, bioc_version=None):
     """
     Constructs a url for the package as archived on bioaRchive
@@ -221,6 +225,9 @@ def find_best_bioc_version(package, version):
     )
 
 
+## FIXME: http://bioconductor.org/packages/release/bioc/src/contrib/PACKAGES
+## This info is available here
+## FIXME : https://bioconductor.org/packages/release/bioc/VIEWS
 class BioCProjectPage(object):
     def __init__(self, package, bioc_version=None, pkg_version=None):
         """
@@ -253,6 +260,7 @@ class BioCProjectPage(object):
                 self.bioc_version = latest_bioconductor_version()
             else:
                 self.bioc_version = find_best_bioc_version(self.package, self._pkg_version)
+        ## bioconductor.org/packages/<bioc_version>/<package_name>
         htmls = {
             'regular_package': os.path.join(
                 base_url, self.bioc_version, 'bioc', 'html', package
@@ -280,7 +288,7 @@ class BioCProjectPage(object):
         # requests allows us to keep track of the final destination URL,
         # which we need for reconstructing the tarball URL.
         self.url = request.url
-            
+
         # If no version has been provided, the following code finds the latest
         # version by finding and scraping the HTML page for the package's
         # "Details" table.
@@ -434,6 +442,7 @@ class BioCProjectPage(object):
     def tarball_basename(self):
         return os.path.basename(self.tarball_url)
 
+    ## FIXME: You don't need the whole tarball to get the DESCRIPTION file
     @property
     def cached_tarball(self):
         """
@@ -624,6 +633,10 @@ class BioCProjectPage(object):
         ):
             # Modified from conda_build.skeletons.cran
             #
+            ## FIXME: take a look at conda_build.skeletons.cran, see
+            ## if cxx have difference versions.
+            ## eg: SystemRequirements: C++11
+            ## https://cran.r-project.org/doc/manuals/r-release/R-exts.html#Using-C_002b_002b11-code
             with tarfile.open(self.cached_tarball) as tf:
                 need_f = any(f.name.lower().endswith(('.f', '.f90', '.f77')) for f in tf)
                 if need_f:
